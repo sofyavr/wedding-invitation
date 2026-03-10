@@ -1,0 +1,573 @@
+/* Свадьба Матвей и Соня — элегантный минимализм, классика */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../fonts/Cormorant_Garamond/CormorantGaramond-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --beige: #D7CBBE;
+  --beige-light: #f5f0e8;
+  --beige-cream: #e8dfd0;
+  --chocolate: #3D271A;
+  --chocolate-light: #5c4033;
+  --graphite: #4a4a4a;
+  --grey: #645A4E;
+  --black: #130F08;
+  --white: #faf9f7;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Montserrat', system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --section-padding: clamp(3rem, 8vw, 5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--black);
+  background: #e8e6e3;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+}
+
+a {
+  color: var(--chocolate);
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out);
+}
+a:hover {
+  color: var(--chocolate-light);
+}
+
+/* Page wrapper */
+.page {
+  min-height: 100vh;
+}
+
+/* Sections */
+.section {
+  padding: var(--section-padding) 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section__title {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  color: var(--chocolate);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* Reveal animation (JS adds .reveal--visible) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----- Hero ----- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.02) 75%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: shimmer 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.hero__subtitle {
+  position: absolute;
+  bottom: clamp(1.5rem, 4vw, 2.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-family: var(--sans);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ----- Photo dividers (full-width B&W) ----- */
+.divider {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.divider img {
+  width: 100%;
+  height: clamp(220px, 40vw, 420px);
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%);
+}
+
+/* ----- White content blocks ----- */
+.block--white {
+  background: #fff;
+}
+
+/* ----- Intro (приветствие + обратный отсчёт) ----- */
+.intro__part {
+  padding-bottom: var(--section-padding);
+}
+.intro__part:last-child {
+  padding-bottom: 0;
+}
+.intro__part:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 1px;
+  background: rgba(61, 39, 26, 0.15);
+  margin: var(--section-padding) auto 0;
+}
+
+.intro__part--countdown {
+  text-align: center;
+}
+
+/* ----- Countdown ----- */
+.countdown {
+  background: var(--beige-light);
+  text-align: center;
+  border-top: 1px solid rgba(61, 39, 26, 0.08);
+  border-bottom: 1px solid rgba(61, 39, 26, 0.08);
+}
+
+.countdown__label {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--chocolate);
+  margin: 0 0 1.5rem;
+}
+
+.countdown__timer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 2rem);
+}
+
+.countdown__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4.5rem;
+}
+
+.countdown__value {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--chocolate);
+  line-height: 1.1;
+}
+
+.countdown__unit {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--grey);
+  margin-top: 0.25rem;
+}
+
+/* ----- Greeting ----- */
+.greeting {
+  background: var(--white);
+}
+
+.greeting__text {
+  font-size: 1.0625rem;
+  color: var(--graphite);
+  text-align: center;
+  margin: 0;
+}
+.greeting__text p {
+  margin: 0;
+}
+
+/* ----- Timeline (вертикальный дизайн как на референсе) ----- */
+.timeline--vertical {
+  padding-left: 0;
+  margin: 0;
+}
+
+.timeline__row {
+  display: grid;
+  grid-template-columns: 2.5rem 1px 1fr;
+  gap: 1.25rem 1.5rem;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  position: relative;
+}
+.timeline__row:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__time {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--chocolate);
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  letter-spacing: 0.1em;
+}
+
+.timeline__line {
+  width: 1px;
+  min-height: 3.5rem;
+  background: linear-gradient(to bottom, var(--chocolate), rgba(61, 39, 26, 0.15));
+  opacity: 0.7;
+  justify-self: center;
+  align-self: stretch;
+}
+.timeline__line--last {
+  min-height: 0.5rem;
+  background: var(--chocolate);
+  opacity: 0.4;
+  align-self: start;
+}
+
+.timeline__cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.timeline__name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--chocolate);
+  letter-spacing: 0.02em;
+}
+
+.timeline__desc {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  color: var(--graphite);
+  line-height: 1.5;
+}
+
+/* Legacy timeline (если понадобится) */
+.timeline__list {
+  position: relative;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* ----- Location ----- */
+.location {
+  background: #fff;
+}
+
+.location__info {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.location__place {
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  color: var(--chocolate);
+  margin: 0 0 0.5rem;
+}
+
+.location__address {
+  font-style: normal;
+  color: var(--grey);
+  margin: 0 0 0.75rem;
+}
+
+.location__link {
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.location__map {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(61, 39, 26, 0.1);
+}
+.location__map iframe {
+  display: block;
+  border: 0;
+}
+
+/* ----- Dress code ----- */
+.dresscode {
+  background: #fff;
+}
+
+.dresscode__text {
+  margin-bottom: 1.5rem;
+}
+.dresscode__text p {
+  margin: 0;
+  color: var(--graphite);
+  text-align: center;
+  font-size: 0.9375rem;
+}
+
+.dresscode__palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dresscode__swatch {
+  width: clamp(2.5rem, 8vw, 3.5rem);
+  height: clamp(2.5rem, 8vw, 3.5rem);
+  border-radius: 50%;
+  background: var(--swatch);
+  border: 2px solid rgba(61, 39, 26, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: var(--chocolate);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.dresscode__swatch:nth-child(2),
+.dresscode__swatch:nth-child(3) {
+  color: #fff;
+  text-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+
+.dresscode__note {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--grey);
+  margin: 0;
+  font-style: italic;
+}
+
+.dresscode__link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ----- RSVP ----- */
+.rsvp {
+  background: var(--white);
+  border-top: 1px solid rgba(61, 39, 26, 0.06);
+}
+
+.rsvp__text {
+  text-align: center;
+  color: var(--graphite);
+  margin: 0 0 1.5rem;
+  max-width: 36ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rsvp__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: center;
+  border-radius: 4px;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+  cursor: pointer;
+}
+.button--primary {
+  background: var(--chocolate);
+  color: #fff;
+  border: 2px solid var(--chocolate);
+}
+.button--primary:hover {
+  background: var(--chocolate-light);
+  border-color: var(--chocolate-light);
+  color: #fff;
+}
+.button--secondary {
+  background: transparent;
+  color: var(--chocolate);
+  border: 2px solid var(--chocolate);
+}
+.button--secondary:hover {
+  background: var(--beige-light);
+  color: var(--chocolate);
+}
+
+/* ----- Footer ----- */
+.footer {
+  background: var(--black);
+  color: var(--beige);
+  padding: var(--section-padding) 1.5rem;
+  text-align: center;
+}
+
+.footer__content {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.footer__text {
+  font-size: 0.9375rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+.footer__text strong {
+  color: #fff;
+}
+
+.footer__contacts {
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+}
+.footer__contacts a {
+  color: var(--beige);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.footer__contacts a:hover {
+  color: #fff;
+}
+
+.footer__names {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .countdown__timer {
+    gap: 1rem;
+  }
+  .countdown__item {
+    min-width: 3.5rem;
+  }
+  .rsvp__actions {
+    flex-direction: column;
+  }
+  .button {
+    width: 100%;
+  }
+}

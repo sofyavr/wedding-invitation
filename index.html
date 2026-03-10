@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Свадьба Матвей и Соня — 24 июля. Приглашение на торжество.">
+  <title>Матвей & Соня — Свадьба</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- Блок 1. Hero -->
+    <header class="hero" id="hero">
+      <div class="hero__bg">
+        <img src="hero-bg.jpg" alt="Матвей и Соня" class="hero__img" width="1920" height="1080" fetchpriority="high">
+        <div class="hero__shimmer" aria-hidden="true"></div>
+      </div>
+      <div class="hero__content">
+        <h1 class="hero__title">Матвей & Соня</h1>
+      </div>
+      <p class="hero__subtitle">Пятница 24 июля</p>
+    </header>
+
+    <!-- Приветствие + Обратный отсчёт -->
+    <section class="block block--white section reveal" id="intro">
+      <div class="intro__part" id="greeting">
+        <h2 class="section__title">Дорогие гости!</h2>
+        <div class="greeting__text">
+          <p>Мы счастливы объявить, что решили создать семью и хотели бы отпраздновать это событие! Для нас очень важно видеть вас рядом в этот день, наполненный любовью и радостью!</p>
+        </div>
+      </div>
+      <div class="intro__part intro__part--countdown" id="countdown">
+        <p class="countdown__label">Наша свадьба через:</p>
+        <div class="countdown__timer">
+          <div class="countdown__item">
+            <span class="countdown__value" data-unit="days">—</span>
+            <span class="countdown__unit">дней</span>
+          </div>
+          <div class="countdown__item">
+            <span class="countdown__value" data-unit="hours">—</span>
+            <span class="countdown__unit">часов</span>
+          </div>
+          <div class="countdown__item">
+            <span class="countdown__value" data-unit="minutes">—</span>
+            <span class="countdown__unit">минут</span>
+          </div>
+          <div class="countdown__item">
+            <span class="countdown__value" data-unit="seconds">—</span>
+            <span class="countdown__unit">секунд</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <img src="photo2.jpg" alt="" width="1200" height="600" loading="lazy">
+    </div>
+
+    <!-- Как пройдет этот день — тайминг как на референсе -->
+    <section class="block block--white section reveal" id="program">
+      <h2 class="section__title">Как пройдет наш день</h2>
+      <div class="timeline timeline--vertical">
+        <div class="timeline__row">
+          <time class="timeline__time">16:00</time>
+          <div class="timeline__line" aria-hidden="true"></div>
+          <div class="timeline__cell">
+            <span class="timeline__name">Сбор гостей</span>
+            <p class="timeline__desc">Фуршет и welcome-зона</p>
+          </div>
+        </div>
+        <div class="timeline__row">
+          <time class="timeline__time">17:00</time>
+          <div class="timeline__line" aria-hidden="true"></div>
+          <div class="timeline__cell">
+            <span class="timeline__name">Начало банкета</span>
+            <p class="timeline__desc">Торжественная часть</p>
+          </div>
+        </div>
+        <div class="timeline__row">
+          <time class="timeline__time">22:00</time>
+          <div class="timeline__line" aria-hidden="true"></div>
+          <div class="timeline__cell">
+            <span class="timeline__name">Танцы</span>
+            <p class="timeline__desc">Вечеринка с диджеем</p>
+          </div>
+        </div>
+        <div class="timeline__row">
+          <time class="timeline__time">23:00</time>
+          <div class="timeline__line timeline__line" aria-hidden="true"></div>
+          <div class="timeline__cell">
+            <span class="timeline__name">Завершение вечера</span>
+            <p class="timeline__desc">Время для красивого окончания праздника</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Где и когда -->
+    <section class="block block--white section reveal" id="location">
+      <h2 class="section__title">Локация</h2>
+      <div class="location__info">
+        <p class="location__place">Ресторан «La Maison»</p>
+        <address class="location__address">Советская ул., 25, Новосибирск</address>
+        <a class="location__link" href="https://yandex.ru/maps/org/la_maison/1028852226/?ll=82.917081%2C55.026733&z=16.11" target="_blank" rel="noopener noreferrer">Посмотреть на карте</a>
+      </div>
+      <div class="location__map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=82.917081%2C55.026733&z=16&pt=82.917081,55.026733,pm2rdm&l=map"
+          width="100%"
+          height="400"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          title="Ресторан La Maison на карте"
+        ></iframe>
+      </div>
+    </section>
+  </section>
+
+    <div class="divider" aria-hidden="true">
+      <img src="photo1.jpg" alt="" width="1200" height="600" loading="lazy">
+    </div>
+
+    <section class="block block--white dresscode section reveal" id="dresscode">
+      <h2 class="section__title">Дресс-код</h2>
+      <div class="dresscode__text">
+        <p>Наша свадьба будет в стиле современной классики, и строгого дресс-кода не предусмотрено. Тем не менее, мы просим вас воздержаться от спортивного стиля и ярких цветов. Нам будет особенно приятно видеть вас в нарядах цветовой гаммы нашей свадьбы:</p>
+      </div>
+      <div class="dresscode__palette">
+        <span class="dresscode__swatch" style="--swatch:#f5f0e8" title="Бежевый"></span>
+        <span class="dresscode__swatch" style="--swatch:#e8dfd0" title="Сливочное масло"></span>
+        <span class="dresscode__swatch" style="--swatch:#fff9db" title="Сливочный"></span>
+        <span class="dresscode__swatch" style="--swatch:#3d271a" title="Шоколадный"></span>
+        <span class="dresscode__swatch" style="--swatch:#4a4a4a" title="Графит"></span>
+        <span class="dresscode__swatch" style="--swatch:#1a1a1a" title="Черный"></span>
+      </div>
+      <p class="dresscode__note">Для мужчин уместным будет классический костюм со светлой рубашкой.</p>
+      <p class="dresscode__note"><a class="dresscode__link" href="https://pin.it/5ficLLLcm" target="_blank" rel="noopener noreferrer">Примеры образов</a></p>
+    </section>
+
+    <div class="divider" aria-hidden="true">
+      <img src="photo3.jpg" alt="" width="1200" height="600" loading="lazy">
+    </div>
+
+    <!-- Блок 7. RSVP -->
+    <section class="block block--white rsvp section reveal" id="rsvp">
+      <h2 class="section__title">Подтверждение присутствия</h2>
+      <p class="rsvp__text">Пожалуйста, подтвердите ваше присутствие на нашем празднике до <strong>24 июня 2026 года</strong> любым удобным для вас способом.</p>
+      <div class="rsvp__actions">
+        <a class="button button--secondary" href="https://t.me/sofyavr">Написать в Telegram</a>
+        <a class="button button--secondary" href="tel:+79134834336">Позвонить</a>
+        <a class="button button--secondary" href="https://max.ru/u/f9LHodD0cOKtZnSDE8oV5OtaVTywghSlQIkV9J0xS7WfpQ4MzYEcYAbWaQA">Написать в Макс</a>
+      </div>
+    </section>
+
+    <!-- Блок 9. Footer -->
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">На все вопросы, связанные с торжеством, с радостью ответит наш организатор <strong>Анастасия</strong>:</p>
+        <p class="footer__contacts">
+          <a href="tel:+79134859343">+7 (913) 485-93-43</a>,
+          <a href="https://t.me/anastassiamln" target="_blank" rel="noopener noreferrer">@anastassiamln</a>
+        </p>
+        <p class="footer__names">Матвей & Соня</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
